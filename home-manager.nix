@@ -8,6 +8,7 @@
         bat
         cargo
         fd
+        fnm
         gcc
         glow
         gum
@@ -16,8 +17,6 @@
         just
         lazydocker
         lazygit
-        nodejs
-        nodePackages.pnpm
         pre-commit
         python3Full
         ripgrep
@@ -26,4 +25,13 @@
         zsh-autosuggestions
         zsh-syntax-highlighting
     ];
+
+    programs.fzf.enable = true;
+    programs.git = {
+        enable = true;
+        userName = "harryvince";
+        userEmail = "harryavince@gmail.com";
+    };
+
+    programs.neovim.enable = true;
 }
