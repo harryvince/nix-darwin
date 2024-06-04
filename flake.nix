@@ -46,6 +46,7 @@
       # The home directory of the user for the system
       users.users.harry.home = "/Users/harry";
     };
+    pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
   in
   {
     # Build darwin flake using:
@@ -57,6 +58,9 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.users.harry = import ./home-manager.nix {
+            inherit inputs pkgs;
+          };
         }
       ];
     };
