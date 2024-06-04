@@ -3,3 +3,9 @@ install:
 
 rebuild:
     darwin-rebuild switch --flake .
+
+list:
+    darwin-rebuild --list-generations
+
+clean:
+    sudo nix-collect-garbage -d
