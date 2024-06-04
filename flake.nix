@@ -45,6 +45,16 @@
 
       # The home directory of the user for the system
       users.users.harry.home = "/Users/harry";
+
+      # Setup homebrew
+      homebrew = {
+        enable = true;
+
+        casks = [
+          "docker"
+          "raycast"
+        ];
+      };
     };
     pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
   in
