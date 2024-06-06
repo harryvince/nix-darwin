@@ -59,6 +59,10 @@
             brew-update="brew update && brew upgrade && brew autoremove && brew cleanup -s && brew cleanup --prune=all";
             ldo="lazydocker";
         };
+
+        initExtra = ''
+            eval $(fnm env)
+        '';
     };
 
     programs.direnv = {
