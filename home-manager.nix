@@ -43,6 +43,7 @@
         enable = true;
         enableCompletion = true;
         syntaxHighlighting.enable = true;
+        autosuggestion.enable = true;
 
         oh-my-zsh = {
             enable = true;
@@ -62,6 +63,7 @@
 
         initExtra = ''
             eval $(fnm env)
+            export EDITOR="nvim"
         '';
     };
 
