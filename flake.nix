@@ -11,6 +11,8 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+    user = "harry";
+    system = "aarch64-darwin";
     configuration = { pkgs, ... }: {
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
@@ -25,7 +27,7 @@
           trusted-public-keys = [
             "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           ];
-          trusted-users = ["harry"];
+          trusted-users = ["${user}"];
           warn-dirty = false;
       };
 
@@ -41,10 +43,10 @@
       system.stateVersion = 4;
 
       # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.hostPlatform = "${system}";
 
       # The home directory of the user for the system
-      users.users.harry.home = "/Users/harry";
+      users.users.${user}.home = "/Users/${user}";
 
       # Setup homebrew
       homebrew = {
@@ -56,7 +58,7 @@
         ];
       };
     };
-    pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+    pkgs = inputs.nixpkgs.legacyPackages.${system};
   in
   {
     # Build darwin flake using:
