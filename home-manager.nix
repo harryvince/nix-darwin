@@ -21,6 +21,7 @@
         python3Full
         ripgrep
         rustc
+        turso-cli
         wget
         zsh-autosuggestions
         zsh-syntax-highlighting
