@@ -64,6 +64,7 @@
         initExtra = ''
             eval $(fnm env)
             export EDITOR="nvim"
+            source ~/.iterm2_shell_integration.zsh
         '';
     };
 
