@@ -18,6 +18,7 @@
         lazydocker
         lazygit
         pre-commit
+        process-compose
         python3Full
         ripgrep
         rustc
