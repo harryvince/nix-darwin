@@ -57,6 +57,7 @@
             wt = "git worktree";
             lg = "lazygit";
             pi5="ssh pi5.vince.io";
+            pi4="ssh pi4.vince.io";
             tf="terraform";
             python="python3";
             brew-update="brew update && brew upgrade && brew autoremove && brew cleanup -s && brew cleanup --prune=all";
