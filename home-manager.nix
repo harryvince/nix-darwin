@@ -8,6 +8,7 @@
         bat
         cargo
         fd
+        fluxcd
         fnm
         gcc
         glow
