@@ -15,6 +15,7 @@
         htop
         jq
         just
+        kubectl
         lazydocker
         lazygit
         pre-commit
