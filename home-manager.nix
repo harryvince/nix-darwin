@@ -16,6 +16,7 @@
         jq
         just
         kubectl
+        kubernetes-helm
         lazydocker
         lazygit
         pre-commit
