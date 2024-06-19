@@ -27,6 +27,7 @@
         ripgrep
         rustc
         turso-cli
+        unixtools.watch
         wget
         zsh-autosuggestions
         zsh-syntax-highlighting
