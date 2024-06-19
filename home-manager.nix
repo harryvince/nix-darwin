@@ -18,6 +18,7 @@
         just
         kubectl
         kubernetes-helm
+        k9s
         lazydocker
         lazygit
         pre-commit
