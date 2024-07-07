@@ -7,6 +7,7 @@
         awscli2
         bat
         cargo
+        fpm
         fd
         fluxcd
         fnm
