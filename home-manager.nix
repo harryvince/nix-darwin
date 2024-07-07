@@ -6,6 +6,7 @@
         ansible
         awscli2
         bat
+        buf
         cargo
         fpm
         fd
@@ -13,6 +14,7 @@
         fnm
         gcc
         glow
+        go
         gum
         htop
         jq
