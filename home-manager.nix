@@ -15,6 +15,7 @@
         gcc
         glow
         go
+        golangci-lint
         gum
         htop
         jq
