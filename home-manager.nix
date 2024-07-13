@@ -3,15 +3,16 @@
     home.stateVersion = "24.11";
 
     home.packages = with pkgs; [
+        age
         ansible
         awscli2
         bat
         buf
         cargo
-        fpm
         fd
         fluxcd
         fnm
+        fpm
         gcc
         glow
         go
@@ -20,9 +21,9 @@
         htop
         jq
         just
+        k9s
         kubectl
         kubernetes-helm
-        k9s
         lazydocker
         lazygit
         pre-commit
@@ -30,6 +31,7 @@
         python3Full
         ripgrep
         rustc
+        sops
         turso-cli
         unixtools.watch
         wget
@@ -62,6 +64,10 @@
             theme = "robbyrussell";
         };
 
+        sessionVariables = {
+            SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
+        };
+
         shellAliases = {
             wt = "git worktree";
             lg = "lazygit";
@@ -77,7 +83,6 @@
 
         initExtra = ''
             eval $(fnm env)
-            export EDITOR="nvim"
             source ~/.iterm2_shell_integration.zsh
         '';
     };
