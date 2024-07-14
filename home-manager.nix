@@ -28,6 +28,7 @@
         lazygit
         pre-commit
         process-compose
+        protoc-gen-go-grpc
         python3Full
         ripgrep
         rustc
