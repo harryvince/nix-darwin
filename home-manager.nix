@@ -9,6 +9,7 @@
     bat
     buf
     cargo
+    docker-compose
     fd
     fluxcd
     fnm
@@ -26,6 +27,7 @@
     kubernetes-helm
     lazydocker
     lazygit
+    podman
     pre-commit
     process-compose
     protoc-gen-go-grpc
@@ -67,6 +69,7 @@
 
     sessionVariables = {
       SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
+      DOCKER_BUILDKIT = 0;
     };
 
     shellAliases = {
@@ -80,6 +83,7 @@
       python = "python3";
       brew-update = "brew update && brew upgrade && brew autoremove && brew cleanup -s && brew cleanup --prune=all";
       ldo = "lazydocker";
+      docker = "podman";
     };
 
     initExtra = ''
