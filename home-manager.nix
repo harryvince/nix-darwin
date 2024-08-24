@@ -69,7 +69,9 @@
 
     sessionVariables = {
       SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
+      EDITOR = "neovim";
       DOCKER_BUILDKIT = 0;
+      DOCKER_HOST = "unix:///$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')";
     };
 
     shellAliases = {
