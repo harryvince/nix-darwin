@@ -102,6 +102,8 @@
                   rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
           fi
       }
+
+      export PATH="$PATH:/Users/harry/Library/Python/3.9/bin"
     '';
   };
 

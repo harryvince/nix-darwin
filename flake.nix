@@ -57,6 +57,12 @@
             "raycast"
           ];
         };
+
+        fonts = {
+          packages = with pkgs; [
+            jetbrains-mono
+          ];
+        };
       };
       pkgs = inputs.nixpkgs.legacyPackages.${system};
     in
