@@ -53,6 +53,7 @@
           enable = true;
 
           casks = [
+            "docker"
             "raycast"
           ];
         };
