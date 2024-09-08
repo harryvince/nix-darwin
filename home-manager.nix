@@ -39,6 +39,7 @@
     wget
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zx
   ];
 
   programs.fzf.enable = true;

@@ -9,3 +9,6 @@ list:
 
 clean:
     sudo nix-collect-garbage -d
+
+archive:
+    nix flake archive
