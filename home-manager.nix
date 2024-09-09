@@ -26,7 +26,6 @@
     kubectl
     kubernetes-helm
     lazydocker
-    lazygit
     # podman
     pre-commit
     process-compose
@@ -48,6 +47,13 @@
     enable = true;
     userName = "harryvince";
     userEmail = "harryavince@gmail.com";
+  };
+
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      git.overrideGpg = true;
+    };
   };
 
   programs.neovim = {
