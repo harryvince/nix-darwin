@@ -9,6 +9,7 @@
     bat
     buf
     cargo
+    docker-compose
     fd
     fluxcd
     fnm
