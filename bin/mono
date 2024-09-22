@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# mono script - for use navigting monorepos
+
+dir=""
+
+find_repo_root() {
+  dir="$PWD"
+
+  while [ "$dir" != "/" ]; do
+    if [ -d "$dir/.git" ]; then return 0; fi
+    dir=$(dirname "$dir")
+  done
+
+  echo "No .git directory found. Are you inside a git repository?"
+  return 1
+}
+
+find_repo_root
+apps=$(ls $dir/apps)
+packages=$(ls $dir/packages)
+locs=($apps $packages)
+
+location=$(printf "%s\n" "${locs[@]}" | fzf --header "mono - cd to")
+if [ -z $location ]; then return 1; fi
+
+# Safely change to the selected directory
+cd "$dir/apps/$location" 2>/dev/null || cd "$dir/packages/$location" 2>/dev/null || {
+  echo "Failed to change directory"
+  return 1
+}

@@ -100,6 +100,7 @@
       python = "python3";
       brew-update = "brew update && brew upgrade && brew autoremove && brew cleanup -s && brew cleanup --prune=all";
       ldo = "lazydocker";
+      m = ". $HOME/bin/mono";
       # docker = "podman";
     };
 
