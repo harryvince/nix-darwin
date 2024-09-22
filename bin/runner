@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+if [ -f "package.json" ]; then
+    task=$(jq -r '.scripts | keys[]' package.json | fzf --header "node - task runner")
+    if [ -z $task ]; then exit; fi
+    npm run $task
+fi
