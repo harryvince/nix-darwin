@@ -42,6 +42,13 @@
     zx
   ];
 
+  home.file = {
+    bin = {
+      source = ./bin;
+      recursive = true;
+    };
+  };
+
   programs.fzf.enable = true;
   programs.git = {
     enable = true;
@@ -78,6 +85,7 @@
       SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
       EDITOR = "neovim";
       DOCKER_BUILDKIT = 0;
+      PATH = "$PATH:$HOME/bin";
       # DOCKER_HOST = "unix:///$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')";
     };
 
