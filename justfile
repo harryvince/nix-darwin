@@ -12,3 +12,6 @@ clean:
 
 archive:
     nix flake archive
+
+update:
+    nix flake update
