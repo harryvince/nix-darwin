@@ -12,6 +12,7 @@
     docker-compose
     fd
     fluxcd
+    flyctl
     fnm
     fpm
     gcc
