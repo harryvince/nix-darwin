@@ -20,6 +20,7 @@
     go
     golangci-lint
     gum
+    gh
     htop
     jq
     just
