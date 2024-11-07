@@ -9,6 +9,7 @@
     bat
     buf
     cargo
+    difftastic
     docker-compose
     fd
     fluxcd
@@ -56,12 +57,18 @@
     enable = true;
     userName = "harryvince";
     userEmail = "harryavince@gmail.com";
+    extraConfig = {
+      diff = { external = "${pkgs.difftastic}/bin/difft"; };
+    };
   };
 
   programs.lazygit = {
     enable = true;
     settings = {
-      git.overrideGpg = true;
+      git = {
+        overrideGpg = true;
+        paging.externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always --display=inline --syntax-highlight=on --tab-width=2";
+      }; 
     };
   };
 
