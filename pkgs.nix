@@ -25,6 +25,7 @@ with pkgs; [
     kubectl
     kubernetes-helm
     lazydocker
+    nil
     pre-commit
     process-compose
     protoc-gen-go-grpc
