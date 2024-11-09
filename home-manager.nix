@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, homeDir, ... }:
 {
   home.stateVersion = "24.11";
 
@@ -42,19 +42,14 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "ssh-agent" "fnm" "fzf" "z" ];
-      theme = "robbyrussell";
-    };
+    autocd = true;
+    dotDir = ".config/zsh";
 
     sessionVariables = {
       SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
       EDITOR = "neovim";
       DOCKER_BUILDKIT = 0;
       PATH = "$PATH:$HOME/bin";
-      # DOCKER_HOST = "unix:///$(podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}')";
     };
 
     shellAliases = {
@@ -69,12 +64,40 @@
       brew-update = "brew update && brew upgrade && brew autoremove && brew cleanup -s && brew cleanup --prune=all";
       ldo = "lazydocker";
       m = ". $HOME/bin/mono";
-      # docker = "podman";
+      l = "ls -lah";
     };
 
     initExtra = ''
-      export PATH="$PATH:/Users/harry/Library/Python/3.9/bin"
+      export PATH="$PATH:${homeDir}/Library/Python/3.9/bin"
+      autoload -U colors && colors
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+      git_dirty_indicator() {
+        if [[ $(git status --porcelain 2>/dev/null) ]]; then
+          echo "*"
+        fi
+      }
+
+      root_folder_name() {
+        basename "$PWD"
+      }
+
+      setopt prompt_subst
+      PROMPT='$(if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == true ]]; then
+        echo "$(root_folder_name) %F{white}[%F{red}$(git branch --show-current)%f$(git_dirty_indicator)%F{white}]%f";
+      else
+        echo "''${PWD/#$HOME/~}";
+      fi) %F{cyan}❯%f '
+
+      eval "$(fnm env --use-on-cd --shell zsh)"
+      source <(fzf --zsh)
     '';
+
+    history = {
+      size = 100000;
+      share = true;
+      path = "${homeDir}/.config/zsh/history";
+    };
   };
 
   programs.direnv = {

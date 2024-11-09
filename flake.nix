@@ -12,6 +12,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
     let
       user = "harry";
+      homeDir = "/Users/${user}";
       system = "aarch64-darwin";
       configuration = { pkgs, ... }: {
         # Auto upgrade nix package and the daemon service.
@@ -46,7 +47,7 @@
         nixpkgs.hostPlatform = "${system}";
 
         # The home directory of the user for the system
-        users.users.${user}.home = "/Users/${user}";
+        users.users.${user}.home = "${homeDir}";
 
         # Setup homebrew
         homebrew = {
@@ -77,7 +78,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.harry = import ./home-manager.nix {
-              inherit inputs pkgs;
+              inherit inputs pkgs homeDir;
             };
           }
         ];
