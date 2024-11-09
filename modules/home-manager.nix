@@ -6,7 +6,7 @@
 
   home.file = {
     bin = {
-      source = ./bin;
+      source = ../bin;
       recursive = true;
     };
   };

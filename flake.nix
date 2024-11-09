@@ -77,7 +77,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.harry = import ./home-manager.nix {
+            home-manager.users.harry = import ./modules/home-manager.nix {
               inherit inputs pkgs homeDir;
             };
           }
