@@ -1,0 +1,41 @@
+{ pkgs }:
+with pkgs; [
+    age
+    ansible
+    awscli2
+    bat
+    buf
+    difftastic
+    docker-compose
+    fd
+    fluxcd
+    flyctl
+    fnm
+    fpm
+    gcc
+    gh
+    glow
+    go
+    golangci-lint
+    gum
+    htop
+    jq
+    just
+    k9s
+    kubectl
+    kubernetes-helm
+    lazydocker
+    pre-commit
+    process-compose
+    protoc-gen-go-grpc
+    python3Full
+    ripgrep
+    rustup
+    sops
+    turso-cli
+    unixtools.watch
+    wget
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zx
+]

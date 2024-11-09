@@ -2,48 +2,7 @@
 {
   home.stateVersion = "24.11";
 
-  home.packages = with pkgs; [
-    age
-    ansible
-    awscli2
-    bat
-    buf
-    cargo
-    difftastic
-    docker-compose
-    fd
-    fluxcd
-    flyctl
-    fnm
-    fpm
-    gcc
-    glow
-    go
-    golangci-lint
-    gum
-    gh
-    htop
-    jq
-    just
-    k9s
-    kubectl
-    kubernetes-helm
-    lazydocker
-    # podman
-    pre-commit
-    process-compose
-    protoc-gen-go-grpc
-    python3Full
-    ripgrep
-    rustc
-    sops
-    turso-cli
-    unixtools.watch
-    wget
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    zx
-  ];
+  home.packages = import ./pkgs.nix { inherit pkgs; };
 
   home.file = {
     bin = {
@@ -114,8 +73,6 @@
     };
 
     initExtra = ''
-      eval $(fnm env)
-      source ~/.iterm2_shell_integration.zsh
       export PATH="$PATH:/Users/harry/Library/Python/3.9/bin"
     '';
   };
