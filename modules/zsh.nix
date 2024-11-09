@@ -4,8 +4,13 @@
   enableCompletion = true;
   syntaxHighlighting.enable = true;
   autosuggestion.enable = true;
-  autocd = true;
   dotDir = ".config/zsh";
+
+  oh-my-zsh = {
+    enable = true;
+    plugins = [ "git" "ssh-agent" "fnm" "fzf" "z" ];
+    theme = "robbyrussell";
+  };
 
   sessionVariables = {
     SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
@@ -31,28 +36,6 @@
 
   initExtra = ''
     export PATH="$PATH:${homeDir}/Library/Python/3.9/bin"
-    autoload -U colors && colors
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-    git_dirty_indicator() {
-      if [[ $(git status --porcelain 2>/dev/null) ]]; then
-        echo "*"
-      fi
-    }
-
-    root_folder_name() {
-      basename "$PWD"
-    }
-
-    setopt prompt_subst
-    PROMPT='$(if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == true ]]; then
-      echo "%F{cyan}$(root_folder_name)%f %F{white}[%F{red}$(git branch --show-current)%F{yellow}$(git_dirty_indicator)%F{white}]%f";
-    else
-      echo "%F{cyan}''${PWD/#$HOME/~}%f";
-    fi) %F{yellow}❯%f '
-
-    eval "$(fnm env --use-on-cd --shell zsh)"
-    source <(fzf --zsh)
   '';
 
   history = {
