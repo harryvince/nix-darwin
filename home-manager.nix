@@ -84,7 +84,7 @@
 
       setopt prompt_subst
       PROMPT='$(if [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == true ]]; then
-        echo "$(root_folder_name) %F{white}[%F{red}$(git branch --show-current)%f$(git_dirty_indicator)%F{white}]%f";
+        echo "$(root_folder_name) %F{white}[%F{red}$(git branch --show-current)%F{yellow}$(git_dirty_indicator)%F{white}]%f";
       else
         echo "''${PWD/#$HOME/~}";
       fi) %F{cyan}❯%f '
