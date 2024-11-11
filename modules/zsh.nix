@@ -36,6 +36,7 @@
 
   initExtra = ''
     export PATH="$PATH:${homeDir}/Library/Python/3.9/bin"
+    export PATH="$PATH:/opt/homebrew/bin"
     eval "$(fnm env --use-on-cd --shell zsh)"
   '';
 
