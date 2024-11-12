@@ -15,13 +15,11 @@
       homeDir = "/Users/${user}";
       system = "aarch64-darwin";
       configuration = { pkgs, ... }: {
-        # Auto upgrade nix package and the daemon service.
         services.nix-daemon.enable = true;
-        # nix.package = pkgs.nix;
+        nix.optimise.automatic = true;
 
         # Nix configuration
         nix.settings = {
-          auto-optimise-store = true;
           builders-use-substitutes = true;
           experimental-features = [ "nix-command" "flakes" ];
           substituters = [ "https://nix-community.cachix.org" ];
@@ -34,7 +32,6 @@
 
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true; # default shell on catalina
-        # programs.fish.enable = true;
 
         # Set Git commit hash for darwin-version.
         system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -46,10 +43,8 @@
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "${system}";
 
-        # The home directory of the user for the system
         users.users.${user}.home = "${homeDir}";
 
-        # Setup homebrew
         homebrew = {
           enable = true;
 
