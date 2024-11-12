@@ -12,6 +12,17 @@
     theme = "robbyrussell";
   };
 
+  # zplug = {
+  #   enable = true;
+  #   zplugHome = "${homeDir}/.config/zsh/plugins";
+  #   plugins = [
+  #     { name = "agkozak/zsh-z"; }
+  #     { name = "plugins/git"; tags = [ "from:oh-my-zsh" ]; }
+  #     { name = "plugins/ssh-agent"; tags = [ "from:oh-my-zsh" ]; }
+  #     { name = "plugins/fzf"; tags = [ "from:oh-my-zsh" ]; }
+  #   ];
+  # };
+
   sessionVariables = {
     SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
     EDITOR = "nvim";

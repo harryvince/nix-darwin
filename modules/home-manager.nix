@@ -21,13 +21,17 @@
     };
   };
 
+  # programs.starship = {
+  #   enable = true;
+  # };
+
   programs.lazygit = {
     enable = true;
     settings = {
       git = {
         overrideGpg = true;
         paging.externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always --display=inline --syntax-highlight=on --tab-width=2";
-      }; 
+      };
     };
   };
 
