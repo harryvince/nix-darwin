@@ -14,7 +14,7 @@
 
   sessionVariables = {
     SOPS_AGE_KEY_FILE = "$HOME/.sops/age.agekey";
-    EDITOR = "neovim";
+    EDITOR = "nvim";
     DOCKER_BUILDKIT = 0;
     PATH = "$PATH:$HOME/bin";
   };
