@@ -1,17 +1,13 @@
 { pkgs }:
 with pkgs; [
-  age
-  ansible
   awscli2
   bat
   buf
   difftastic
   docker-compose
   fd
-  fluxcd
   flyctl
   fnm
-  fpm
   gcc
   gh
   glow
@@ -21,16 +17,11 @@ with pkgs; [
   htop
   jq
   just
-  k9s
-  kubectl
-  kubernetes-helm
   lazydocker
   nil
   nixpkgs-fmt
-  pre-commit
   process-compose
-  protoc-gen-go-grpc
-  python3Full
+  python3
   ripgrep
   rustup
   sops
