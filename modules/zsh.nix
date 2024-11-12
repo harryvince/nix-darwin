@@ -28,6 +28,7 @@
     EDITOR = "nvim";
     DOCKER_BUILDKIT = 0;
     PATH = "$PATH:$HOME/bin";
+    DISABLE_AUTO_UPDATE = true;
   };
 
   shellAliases = {
