@@ -21,9 +21,9 @@
     };
   };
 
-  # programs.starship = {
-  #   enable = true;
-  # };
+  programs.starship = {
+    enable = true;
+  };
 
   programs.lazygit = {
     enable = true;
