@@ -25,6 +25,7 @@ with pkgs; [
   python3
   ripgrep
   rustup
+  slides
   sops
   turso-cli
   unixtools.watch
