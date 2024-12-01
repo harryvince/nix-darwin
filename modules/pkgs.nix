@@ -3,6 +3,7 @@ with pkgs; [
   awscli2
   bat
   buf
+  deno
   difftastic
   docker-compose
   fd
