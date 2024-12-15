@@ -3,6 +3,12 @@
 
 add_newline = false
 
+# A minimal left prompt
+format = """$character"""
+
+# move the rest of the prompt to the right
+right_format = """$all"""
+
 [package]
 disabled = true
 
@@ -17,3 +23,4 @@ symbol = ""
 
 [lua]
 disabled = true
+    
