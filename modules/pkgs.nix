@@ -21,6 +21,7 @@ with pkgs; [
   lazydocker
   nil
   nixpkgs-fmt
+  nnn
   process-compose
   python3
   ripgrep
