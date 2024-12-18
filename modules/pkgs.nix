@@ -27,7 +27,6 @@ with pkgs; [
   ripgrep
   rustup
   slides
-  sops
   turso-cli
   unixtools.watch
   wget
