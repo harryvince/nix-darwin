@@ -36,6 +36,7 @@
     export PATH="$PATH:/opt/homebrew/bin"
     eval "$(fnm env --use-on-cd --shell zsh)"
     source <(fzf --zsh)
+    source ~/.env.sh
 
     # oh-my-zsh aliases
     setopt auto_cd
