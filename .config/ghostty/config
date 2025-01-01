@@ -1,0 +1,7 @@
+font-family = GeistMono Nerd Font
+font-size = 18
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+macos-titlebar-proxy-icon = hidden
+theme = vesper
