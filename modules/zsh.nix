@@ -34,6 +34,7 @@
 
     export PATH="$PATH:${homeDir}/Library/Python/3.9/bin"
     export PATH="$PATH:/opt/homebrew/bin"
+    export PATH="$PATH:${homeDir}/.bun/bin"
     eval "$(fnm env --use-on-cd --shell zsh)"
     source <(fzf --zsh)
     source ~/.env.sh
