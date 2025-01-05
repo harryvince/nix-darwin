@@ -30,6 +30,7 @@ with pkgs; [
   turso-cli
   unixtools.watch
   wget
+  zig
   zsh-autosuggestions
   zsh-syntax-highlighting
   zx
