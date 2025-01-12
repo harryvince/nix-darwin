@@ -17,9 +17,7 @@
   shellAliases = {
     wt = "git worktree";
     lg = "lazygit";
-    pi5 = "ssh pi5.vince.io";
     kpi5 = "kubectl config use-context pi5";
-    pi4 = "ssh pi4.vince.io";
     kpi4 = "kubectl config use-context pi4";
     tf = "terraform";
     python = "python3";
@@ -27,6 +25,8 @@
     ldo = "lazydocker";
     m = ". $HOME/bin/mono";
     n = "nnn";
+    pi5-alpha = "192.168.0.65";
+    pi5-beta = "192.168.0.43";
   };
 
   initExtra = ''
